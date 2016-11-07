@@ -1,19 +1,30 @@
-.background    { background: rgb(200, 100, 21);
+.background    { background: white;
                  table-layout: fixed;
                  border-spacing: 0;   }
 .background td { padding: 0;          }
-.lava          { background: rgb(0, 160, 0); }
-.wall          { background: black;   }
-.floater	   { background: gray;   }
+.lava          { background-image: url(https://66.media.tumblr.com/e675bb97a3595f2dadcca267453a64de/tumblr_og3mdxzphp1vjue30o1_75sq.jpg); }
+.wall          { background-image: url(https://65.media.tumblr.com/9b0588a85edd1eaa879f4d2a79d8e287/tumblr_og3mdjMAlF1vjue30o1_75sq.png);   }
+.floater	   { background-image: url(https://67.media.tumblr.com/10d0deb871273c1c203d708a69a4d805/tumblr_og3mivpVCK1vjue30o1_75sq.png);   }
 
 .actor  { position: absolute;  }
-.player { background: rgb(64, 64, 64); }
+.player { background-image: url(https://67.media.tumblr.com/9bf24514a7e17f7fcd3c97edad579d2b/tumblr_og3m8nF9xv1vjue30o1_75sq.png); }
 .coin { background: rgb(241, 229, 89); }
+.enemy {background-color: green;}
 .special { background: rgb(130,78,245); }
+.goal {background: green; }
+
+.info p{ display: inline-block;}
 
 .game {
   overflow: hidden;
   max-width: 600px;
   max-height: 450px;
   position: relative;
+}
+
+.lost .player {
+  background: rgb(160, 64, 64);
+}
+.won .player {
+  box-shadow: -4px -7px 8px gold, 4px -7px 8px gold;
 }
