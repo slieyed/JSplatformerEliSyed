@@ -89,14 +89,14 @@ Player.prototype.type = "player";
 
 function Special(pos) {
 	this.basePos = this.pos = pos.plus(new Vector(0.2,0.1));
-	this.size = new Vector(0.6,0.6);
+	this.size = new Vector(1,1);
 	this.wobble = Math.random() * Math.PI * 2;	
 }
 Special.prototype.type = 'special';
 
 function Goal(pos) {
 	this.basePos = this.pos = pos.plus(new Vector(0.2,0.1));
-	this.size = new Vector(0.6,0.6);
+	this.size = new Vector(1.3,1.3);
 	this.wobble = Math.random() * Math.PI * 2;	
 }
 Goal.prototype.type = 'goal';
@@ -112,7 +112,7 @@ Coin.prototype.type = "coin";
 
 function Enemy(pos) {
   this.basePos = this.pos = pos.plus(new Vector(0, 0));
-  this.size = new Vector(1, 1);
+  this.size = new Vector(.8, 1.5);
   // Make it go back and forth in a sine wave.
   this.wobble = Math.PI * 2;
 }
@@ -326,11 +326,11 @@ Coin.prototype.act = function(step) {
   this.pos = this.basePos.plus(new Vector(0, wobblePos));
 };
 
-var wobbleSSpeed = 8, wobbleSDist = 0.07;
+var wobbleSSpeed = 8, wobbleSDist = 0.5;
 
 Special.prototype.act = function(step) {
-	this.wobble += step * wobbleSSpeed;
-	var wobblePos = Math.sin(this.wobble) * wobbleSDist;
+	this.wobble += step * wobbleSpeed;
+	var wobblePos = Math.sin(this.wobble) * wobbleDist;
 	this.pos = this.basePos.plus(new Vector(0, 0));
 };
 
@@ -340,7 +340,7 @@ Goal.prototype.act = function(step) {
 	this.pos = this.basePos.plus(new Vector(0, 0));
 };
 
-var wobbleDSpeed = .5, wobbleDDist = 5;
+var wobbleDSpeed = .5, wobbleDDist = 5.5;
 
 Enemy.prototype.act = function(step) {
   this.wobble += step * wobbleDSpeed;
@@ -368,8 +368,8 @@ Player.prototype.moveX = function(step, level, keys) {
     this.pos = newPos;
 };
 
-var gravity = 30;
-var jumpSpeed = 17;
+var gravity = 30.5;
+var jumpSpeed = 16;
 
 Player.prototype.moveY = function(step, level, keys) {
   // Accelerate player downward (always)
