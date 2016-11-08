@@ -1,3 +1,4 @@
+.body 		   { background: rgb(252, 242, 242); }
 .background    { background: rgb(252, 242, 242);
                  table-layout: fixed;
                  border-spacing: 0;   }
@@ -11,7 +12,7 @@
 .coin { background: rgb(247, 221, 22); }
 .enemy {background: rgb(209,17,82);}
 .special { background: rgb(146,173,252); }
-.goal {background: rgb(191,171,13); }
+.goal {background: rgb(158,4,246); }
 
 .info p{ display: inline-block;}
 
@@ -23,7 +24,8 @@
 }
 
 .lost .player {
-  background: rgb(166, 76, 121);
+  background: rgb(231,26,129);
+  transform:scaleX(0.1);
 }
 .won .player {
   box-shadow: -4px -7px 8px gold, 4px -7px 8px gold;
